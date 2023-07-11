@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include "estructuras.c"
 #include "metodos.c"
+#include "regDatos.c"
 
 
 int main(int argc, char *argv[]) {
@@ -59,6 +60,12 @@ int main(int argc, char *argv[]) {
     } else {
         personas = malloc(cantidadPersonas * sizeof(Profesor) + (cantidadPersonas - 1) * sizeof(Estudiante));
     }
+
+    //metodo registrar personas: Profesor y Estudiante
+    registrarPersonas(opcion);
+
+    //metodo mostrar Datos ingresados
+    mostrarDatos(opcion, personas, cantidadPersonas);
 
       // Liberar la memoria asignada
     free(personas);
