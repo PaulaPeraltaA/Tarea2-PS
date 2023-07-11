@@ -1,12 +1,11 @@
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include "estructuras.c"
-#include "metodos.c"
+#include "estructuras.h"
+#include "metodos.h"
+#include "regDatos.h"
 
  // Registro de personas
- void registrarPersonas(char* opcion){
+ void registrarPersonas(char opcion, void *personas, int cantidadPersonas){
     if (opcion == 'p') {
        for (int cont = 0; cont < cantidadPersonas; cont++) {
          registroProfesor((Profesor *)personas);

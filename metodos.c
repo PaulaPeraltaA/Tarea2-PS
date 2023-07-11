@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include "estructuras.c"
-
+#include <string.h>
+#include "estructuras.h"
+#include "metodos.h"
 
 // 1. Crear profesor
-
 void registroProfesor(Profesor *profesor) {
     printf("\nRegistro de Profesor\n");
     printf("Nombre: ");
@@ -26,7 +25,6 @@ void registroProfesor(Profesor *profesor) {
 }
 
 //2. Crear estudiante
-
 void registroEstudiante(Estudiante *estudiante) {
     printf("\nRegistro de Estudiante\n");
     printf("Nombre: ");
@@ -48,10 +46,6 @@ void registroEstudiante(Estudiante *estudiante) {
     }
 }
 
-   
-
-//3. Mostrar datos
-    // Mostrar la información ingresada
 void mostrarDatos(char opcion, void *personas, int cantidadPersonas){
    if (opcion == 'p') {
         Profesor *profesor = personas;

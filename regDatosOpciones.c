@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "estructuras.c"
-#include "metodos.c"
-#include "regDatos.c"
+#include "estructuras.h"
+#include "metodos.h"
+#include "regDatos.h"
 
-
+// Validar el número de personas que se ingresan
 int main(int argc, char *argv[]) {
     int opt;
     int cantidadPersonas;
@@ -40,14 +40,14 @@ int main(int argc, char *argv[]) {
                 opcion = (char) opt;
                 break;
             case ':':
-                printf("Opción: %c  Falta argumento\n", optopt);
+                printf("Opción: %c  Falta argumento\n", opt);
                 break;
             case '?':
-                printf("Opción no reconocida: %c\n", optopt);
+                printf("Opción no reconocida: %c\n", opt);
                 break;
         }
     }
-    for (; optind < argc; optind++) {
+    for (int optind =0; optind < argc; optind++) {
         printf("Argumentos sobrantes: %s\n", argv[optind]);
     }
 
@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
     }
 
     //metodo registrar personas: Profesor y Estudiante
-    registrarPersonas(opcion);
+    registrarPersonas(opcion,personas, cantidadPersonas);
 
     //metodo mostrar Datos ingresados
     mostrarDatos(opcion, personas, cantidadPersonas);
@@ -71,5 +71,4 @@ int main(int argc, char *argv[]) {
     free(personas);
 
     return 0;
-
 }
